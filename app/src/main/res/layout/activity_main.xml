@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.sravanreddy.flopkart.MainActivity">
+
+<android.support.v7.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/colorPrimary">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sing in with mobile"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/toolbar_textSize"
+        android:textColor="@color/icons"/>
+</android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/editText_topmargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/edittext_sidesMargin"
+        android:padding="@dimen/editTextPadding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"
+        android:inputType="number"
+        android:hint="Mobile" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_background"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:padding="@dimen/editTextPadding"
+        android:layout_marginBottom="@dimen/edittext_sidesMargin"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <CheckBox
+        android:id="@+id/rememberMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/divier"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:text="CheckBox" />
+
+    <Button
+        android:id="@+id/signin_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/editText_topmargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:background="@drawable/button_bg_gradient"
+        android:padding="@dimen/editTextPadding"
+        android:textColor="@color/icons"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/edittext_sidesMargin"
+        android:text="Sign In" />
+
+    <Button
+        android:id="@+id/signUp_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:padding="@dimen/editTextPadding"
+        android:background="@drawable/button_secondary_bg_gradient"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/secondary_button_textColor"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/edittext_sidesMargin"
+        android:text="Create an account" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/editText_topmargin"
+        android:gravity="center_horizontal"
+        android:textColor="@color/secondaryText"
+        android:text="Forgot Password?" />
+
+
+</LinearLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sravanreddy.flopkart.SignUp">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signUp_toolbar_text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/toolbar_textSize"
+            android:textColor="@color/icons"/>
+    </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"
+        android:inputType="textPersonName"
+        android:hint="First Name" />
+
+    <EditText
+        android:id="@+id/lname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"        android:inputType="textPersonName"
+        android:hint="Last Name" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"        android:inputType="textPersonName"
+        android:hint="Address" />
+
+    <EditText
+        android:id="@+id/mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"
+        android:inputType="number"
+        android:hint="Mobile" />
+
+    <EditText
+        android:id="@+id/emailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"
+        android:inputType="textPersonName"
+        android:hint="Email Id" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"
+        android:inputType="textPassword"
+        android:hint="Password"/>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:background="@drawable/button_bg_gradient"
+        android:padding="@dimen/signup_editText_padding"
+        android:textColor="@color/icons"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:text="Sign Up" />
+
+    <TextView
+        android:id="@+id/terms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/signUp_terms"
+        android:gravity="center_horizontal"
+        android:text="By pressing Sign Up you agree the Terms of Services and Privacy Policy" />
+
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:background="@drawable/button_secondary_bg_gradient"
+        android:padding="@dimen/signup_editText_padding"
+        android:textColor="@color/secondary_button_textColor"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:text="Already have an account ?" />
+
+
+</LinearLayout>
