@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import java.util.logging.Handler;
+
 /**
  * Created by sravanreddy on 4/11/18.
  */

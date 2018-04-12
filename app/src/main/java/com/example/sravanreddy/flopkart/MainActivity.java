@@ -33,7 +33,7 @@ private String jsonResponse;
 private CheckBox rememberMe;
 private String rjtUrl;
 private Boolean userFound=false;
-private String mobile="";
+
 
 SharedPreferences msharedPreferences;
     @Override
@@ -90,19 +90,23 @@ SharedPreferences msharedPreferences;
                         String firstname = person.getString("firstname");
                         String lastname = person.getString("lastname");
                         String email = person.getString("email");
-                        mobile = person.getString("mobile");
-                        if(mobile.equals(uname.getText().toString())) {
+                        String mobile = person.getString("mobile");
+                        String apiKey = person.getString("appapikey ");
+                        if(msg.contains("success")) {
                             if (rememberMe.isChecked()) {
-                                msharedPreferences.edit().putString("UserName", uname.getText().toString()).commit();
                                 msharedPreferences.edit().putString("Password", password.getText().toString()).commit();
                                 msharedPreferences.edit().putBoolean("isChecked", true).commit();
                             } else {
-                                msharedPreferences.edit().remove("UserName").commit();
                                 msharedPreferences.edit().remove("Password").commit();
                                 msharedPreferences.edit().remove("isChecked").commit();
                             }
+                            hideDialog();
+                            msharedPreferences.edit().putString("ID", id).commit();
+                            msharedPreferences.edit().putString("FullName", firstname+" "+lastname).commit();
+                            msharedPreferences.edit().putString("Email", email).commit();
+                            msharedPreferences.edit().putString("Mobile", mobile).commit();
+                            msharedPreferences.edit().putString("api_key", apiKey).commit();
                             Intent homeIntent=new Intent(MainActivity.this, Home.class);
-                            homeIntent.putExtra("Username", firstname+" "+lastname);
                             startActivity(homeIntent);
 
                         }
@@ -111,7 +115,6 @@ SharedPreferences msharedPreferences;
                     }
                     Log.i("Response",response.toString());
 
-                    hideDialog();
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }

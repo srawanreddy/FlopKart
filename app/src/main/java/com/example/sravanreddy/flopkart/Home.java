@@ -1,5 +1,6 @@
 package com.example.sravanreddy.flopkart;
 
+import android.content.SharedPreferences;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,10 +18,12 @@ private android.support.v7.widget.Toolbar homeToolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private TextView username;
+    private SharedPreferences msharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_drawer);
+        msharedPreferences=getSharedPreferences("user_local", MODE_PRIVATE);
         homeToolbar=findViewById(R.id.home_toolbar);
         setSupportActionBar(homeToolbar);
         drawerLayout=findViewById(R.id.drawer_layout);
@@ -30,7 +33,7 @@ private android.support.v7.widget.Toolbar homeToolbar;
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
         username = headerView.findViewById(R.id.navi_header_userName);
-        username.setText(getIntent().getExtras().getString("Username"));
+        username.setText(msharedPreferences.getString("FullName", ""));
     }
 
     @Override
