@@ -5,7 +5,7 @@
     <string name="home_toolbarText">Home</string>
     <string name="navigation_header_hello">Hello,</string>
     <string name="navigation_profile_text">Profile</string>
-    <string name="navigation_shop_text">Shop</string>
+    <string name="navigation_shop_text">Category</string>
     <string name="navigation_myOrders_text">My Orders</string>
     <string name="navigation_logout_text">LogOut</string>
     <string name="open_drawer">Open Drawer</string>

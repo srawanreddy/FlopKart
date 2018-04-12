@@ -7,7 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 import java.util.logging.Handler;
 
 /**
@@ -17,15 +21,16 @@ import java.util.logging.Handler;
 public class ViewPagerAdapter extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer [] images={R.drawable.black, R.drawable.blazers, R.drawable.shoes};
 
-    public ViewPagerAdapter(Context context) {
+    private ArrayList<Catogories> catogories;
+    public ViewPagerAdapter(Context context, ArrayList<Catogories> catogories) {
         this.context = context;
+        this.catogories=catogories;
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return catogories.size();
     }
 
     @Override
@@ -38,7 +43,9 @@ public class ViewPagerAdapter extends PagerAdapter {
         layoutInflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view=layoutInflater.inflate(R.layout.custom_photoslide, null);
         ImageView imageView=view.findViewById(R.id.imageView2);
-        imageView.setImageResource(images[position]);
+        TextView description=view.findViewById(R.id.description);
+        description.setText(catogories.get(position).getCname());
+        Picasso.get().load(catogories.get(position).getCimagerl()).into(imageView);
         ViewPager vp= (ViewPager) container;
         vp.addView(view, 0);
         return view;

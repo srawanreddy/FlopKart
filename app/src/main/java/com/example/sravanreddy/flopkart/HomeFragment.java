@@ -36,7 +36,6 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment {
 ViewPager photoSlider;
-Handler handler;
 ViewPagerAdapter viewPagerAdapter;
 private RecyclerView recyclerView;
 private StaggeredGridLayoutManager gaggeredGridLayoutManager;
@@ -49,16 +48,15 @@ private int page=0;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
      View view= inflater.inflate(R.layout.home_fragment, null);
+     View view_viewPager=inflater.inflate(R.layout.viewpager_for_photoslide, null);
         animation = AnimationUtils.loadLayoutAnimation(getActivity(), R.anim.recyclerview_animation);
         msharedPreferences= getActivity().getSharedPreferences("user_local", MODE_PRIVATE);
         Log.i("Shared Preferrences", msharedPreferences.getString("api_key", ""));
         Log.i("Shared Preferrences", msharedPreferences.getString("ID", ""));
         populateCategoryData();
-        photoSlider=view.findViewById(R.id.viewPager);
-        viewPagerAdapter=new ViewPagerAdapter(getActivity());
-        photoSlider.setAdapter(viewPagerAdapter);
+        photoSlider=view_viewPager.findViewById(R.id.viewPager);
         recyclerView=view.findViewById(R.id.recyclerView);
-        handler=new Handler();
+
         return view;
     }
 
@@ -92,6 +90,8 @@ private int page=0;
                         gaggeredGridLayoutManager=new StaggeredGridLayoutManager(2,1);
                         recyclerView.setLayoutManager(gaggeredGridLayoutManager);
                         recyclerView.setAdapter(myAdapter);
+//                        viewPagerAdapter=new ViewPagerAdapter(getActivity(), catogoriesList);
+//                        photoSlider.setAdapter(viewPagerAdapter);
                     }
 
                 } catch (JSONException e) {
@@ -110,21 +110,4 @@ private int page=0;
 
     }
 
-    Runnable runnable = new Runnable() {
-        public void run() {
-            if (viewPagerAdapter.getCount() == page) {
-                page = 0;
-            } else {
-                page++;
-            }
-            photoSlider.setCurrentItem(page, true);
-            handler.postDelayed(this, 5000);
-        }
-    };
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        handler.postDelayed(runnable, 1000);
-    }
 }

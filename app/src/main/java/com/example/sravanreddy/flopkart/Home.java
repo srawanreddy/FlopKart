@@ -1,6 +1,7 @@
 package com.example.sravanreddy.flopkart;
 
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,7 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 private android.support.v7.widget.Toolbar homeToolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -29,6 +30,7 @@ private android.support.v7.widget.Toolbar homeToolbar;
         drawerLayout=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.navigation_view);
         View headerView=navigationView.getHeaderView(0);
+        navigationView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this, drawerLayout, homeToolbar, R.string.open_drawer, R.string.close_drawer);
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
@@ -51,5 +53,24 @@ private android.support.v7.widget.Toolbar homeToolbar;
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.navigation_profile:
+
+                break;
+            case R.id.navigation_shop:
+                HomeFragment homeFragment=new HomeFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment, homeFragment);
+                break;
+            case R.id.navigation_myOrders:
+                break;
+            case R.id.navigation_logout:
+                finish();
+                break;
+        }
+        return true;
     }
 }

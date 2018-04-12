@@ -10,9 +10,10 @@
     <dimen name="signup_editText_padding">10dp</dimen>
     <dimen name="signUp_terms">10sp</dimen>
     <dimen name="button_borderSize">1dp</dimen>
-    <dimen name="navigation_header_height">160dp</dimen>
-    <dimen name="navigation_header_textSize">30sp</dimen>
-    <dimen name="navigation_header_helloTextSize">35sp</dimen>
+    <dimen name="navigation_header_height">100dp</dimen>
+    <dimen name="navigation_header_textSize">20sp</dimen>
+    <dimen name="navigation_header_helloTextSize">25sp</dimen>
     <dimen name="photosilder_marginTop">10dp</dimen>
     <dimen name="recyclerview_list_textView_padding">2dp</dimen>
+    <dimen name="image_minHeight">150dp</dimen>
 </resources>

@@ -15,7 +15,11 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
-        app:menu="@menu/navigation_menu">
+        app:menu="@menu/navigation_menu"
+        app:itemTextColor="@color/colorPrimary"
+        android:textAlignment="center"
+        app:itemTextAppearance="?android:attr/textAppearanceLarge"
+        app:itemIconTint="@color/colorPrimary">
 
     </android.support.design.widget.NavigationView>
 
