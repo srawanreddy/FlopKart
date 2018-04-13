@@ -146,4 +146,10 @@ SharedPreferences msharedPreferences;
         if(pDialog.isShowing())
             pDialog.hide();
     }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        msharedPreferences.edit().remove("Password");
+    }
 }

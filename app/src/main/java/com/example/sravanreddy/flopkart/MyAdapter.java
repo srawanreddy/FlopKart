@@ -26,6 +26,7 @@ public class MyAdapter extends RecyclerView.Adapter {
     private static final int TYPE_HEAD = 0;
     private static final int TYPE_LIST = 1;
     private Handler handler;
+    private String cID;
     private int page=0;
     public static int span;
     ArrayList<Catogories> myList;
@@ -52,13 +53,19 @@ public class MyAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof MyViewHolder) {
-            final Catogories catogories = myList.get(position);
+            final Catogories catogories = myList.get(position-1);
             ((MyViewHolder) holder).mainText.setText(catogories.getCname());
             Picasso.get().load(catogories.getCimagerl()).into(((MyViewHolder) holder).imageView);
+            cID=catogories.getCid();
+            if(position%3==0){
+                StaggeredGridLayoutManager.LayoutParams layoutParams = new StaggeredGridLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                layoutParams.setFullSpan(true);
+                holder.itemView.setLayoutParams(layoutParams);
+            }
             ((MyViewHolder) holder).constraintLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, ((MyViewHolder) holder).mainText.getText().toString() + " is clicked", Toast.LENGTH_SHORT).show();
+
                 }
             });
         } else if (holder instanceof BannerViewHolder) {
@@ -73,7 +80,7 @@ public class MyAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return myList.size();
+        return myList.size()+1;
     }
 
     @Override

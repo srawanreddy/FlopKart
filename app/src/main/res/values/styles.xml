@@ -19,6 +19,11 @@
         <item name="android:shadowDy">5</item>
         <item name="android:shadowRadius">1</item>
     </style>
-
+    <style name="custom_text_appearance" parent="@android:style/TextAppearance">
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
 
 </resources>
