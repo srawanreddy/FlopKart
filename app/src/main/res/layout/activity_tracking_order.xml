@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TrackingOrder">
+
+    <ImageView
+        android:id="@+id/tracking_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/order_confirmed" />
+
+    <TextView
+        android:id="@+id/order_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="#48c781"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/shipment_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Shipment ID" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:text="item Name" />
+
+    <TextView
+        android:id="@+id/billing_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:text="Billing address" />
+
+    <Button
+        android:id="@+id/close_tracking_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:background="@drawable/button_bg_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/icons"
+        android:text="Close" />
+
+
+</LinearLayout>

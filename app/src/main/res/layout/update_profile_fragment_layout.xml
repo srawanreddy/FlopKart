@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/firstName_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/update_profile_text_marginTop"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"
+        android:inputType="textPersonName"
+        android:hint="First Name" />
+
+    <EditText
+        android:id="@+id/lastName_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:ems="10"
+        android:background="@drawable/edittext_background"
+        android:inputType="textPersonName"
+        android:hint="Last Name" />
+
+    <EditText
+        android:id="@+id/email_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Email Id" />
+
+    <EditText
+        android:id="@+id/address_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Address" />
+
+    <EditText
+        android:id="@+id/mobile_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Mobile" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/update_profile_text_marginTop"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:background="@drawable/button_bg_gradient"
+        android:padding="@dimen/signup_editText_padding"
+        android:textColor="@color/icons"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:text="Update" />
+</LinearLayout>

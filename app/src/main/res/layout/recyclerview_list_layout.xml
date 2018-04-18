@@ -11,8 +11,7 @@
     <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="@dimen/image_minHeight"
+        android:layout_height="@dimen/recycler_image_height"
 
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/product_description_padding"
+        android:layout_marginBottom="@dimen/product_description_padding"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/product_description_name_textSize"
+        android:text="TextView"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/product_description_padding"
+        android:layout_height="@dimen/product_description_imageHeight"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/no_preview" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="300dp"
+        android:layout_marginTop="@dimen/product_description_padding"
+        android:layout_marginBottom="@dimen/product_description_padding"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/product_description_textView_textsize"
+        android:gravity="center"
+         />
+
+    <ImageButton
+        android:id="@+id/wishlist_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/product_description_padding"
+        android:layout_marginBottom="@dimen/product_description_padding"
+        android:background="#00ffffff"
+        app:srcCompat="@drawable/ic_favorite" />
+
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <TextView
+        android:id="@+id/product_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/product_description_padding"
+        android:layout_marginBottom="@dimen/product_description_padding"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/product_description_textView_textsize"
+        android:text="TextView" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <TextView
+        android:id="@+id/description_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/product_description_padding"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/product_description_textView_textsize"
+        android:textStyle="bold"
+        android:text="Description:" />
+
+    <com.ms.square.android.expandabletextview.ExpandableTextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/expand_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        expandableTextView:maxCollapsedLines="1"
+        expandableTextView:animDuration="200">
+        <TextView
+            android:id="@id/expandable_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="@dimen/product_description_textView_textsize"
+            android:textColor="@color/primaryText"
+            />
+        <ImageButton
+            android:id="@id/expand_collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:layout_gravity="right|bottom"
+            android:background="@android:color/transparent"/>
+    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color" />
+
+    <Button
+        android:id="@+id/add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:background="@drawable/button_bg_gradient"
+        android:padding="@dimen/editTextPadding"
+        android:layout_marginTop="@dimen/product_description_padding"
+        android:textColor="@color/icons"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/edittext_sidesMargin"
+        android:text="@string/product_description_buttonText" />
+</LinearLayout>
+</ScrollView>

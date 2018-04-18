@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
+    android:baselineAligned="false">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cart_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+
+    </android.support.v7.widget.RecyclerView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/coupon_code"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:background="@drawable/edittext_background"
+        android:inputType="textPersonName"
+        android:hint="Coupon Code" />
+
+    <Button
+        android:id="@+id/apply_coupon_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:background="@drawable/button_bg_gradient"
+        android:textColor="@color/icons"
+        android:text="Apply" />
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tax_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/sign_editText_topMargin"
+            android:padding="5dp"
+            android:text="Tax"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="@dimen/sign_editText_topMargin"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:padding="5dp"
+            android:text="Price"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:padding="@dimen/signup_editText_padding"
+        android:textSize="20sp"
+        android:text="Subtotal" />
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sign_editText_topMargin"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+            android:padding="@dimen/signup_editText_padding"
+            android:textSize="20sp"
+            android:gravity="right"
+            android:layout_gravity="center|right"
+            android:text="Price" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/checkout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:background="@drawable/button_bg_gradient"
+        android:textColor="@color/icons"
+        android:layout_gravity="bottom"
+        android:text="Check Out" />
+
+</LinearLayout>
+</ScrollView>

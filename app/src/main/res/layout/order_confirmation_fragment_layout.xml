@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="10dp">
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="left"
+        app:srcCompat="@drawable/order_confirmed" />
+    <TextView
+        android:id="@+id/cirfirmation_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_marginLeft="15dp"
+        android:textStyle="bold"
+        android:textColor="#00CED1"
+        android:text="Order Placed Successfully" />
+</LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView_order_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_marginBottom="20dp">
+    </android.support.v7.widget.RecyclerView>
+    <Button
+        android:id="@+id/close_orderConfirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:background="@drawable/button_bg_gradient"
+        android:padding="@dimen/editTextPadding"
+        android:textColor="@color/icons"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/edittext_sidesMargin"
+        android:text="close"
+        />
+
+
+</LinearLayout>

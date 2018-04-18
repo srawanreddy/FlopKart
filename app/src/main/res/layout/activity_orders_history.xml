@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<android.support.v7.widget.Toolbar
+    android:id="@+id/order_histoy_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/colorPrimary">
+    <TextView
+        android:id="@+id/order_history_toolbar_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/icons"
+        android:textSize="@dimen/toolbar_textSize"
+        android:textStyle="bold"/>
+</android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/order_history_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/close_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Close"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center"
+        android:background="@drawable/button_bg_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/icons"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</LinearLayout>

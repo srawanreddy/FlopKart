@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/order_id_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:text="TextView"
+        />
+
+    <TextView
+        android:id="@+id/order_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/order_item_price_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="25dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/track"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_editText_topMargin"
+        android:layout_marginLeft="@dimen/edittext_sidesMargin"
+        android:background="@drawable/button_bg_gradient"
+        android:padding="@dimen/signup_editText_padding"
+        android:textColor="@color/icons"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginRight="@dimen/edittext_sidesMargin"
+        android:layout_marginBottom="@dimen/signUp_editText_bottomMargin"
+        android:text="Track" />
+
+</LinearLayout>

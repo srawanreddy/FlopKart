@@ -6,7 +6,7 @@
     android:id="@+id/cart"
     app:showAsAction="ifRoom"/>
     <item android:title=""
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/ic_favorite_border"
         android:id="@+id/search"
         app:showAsAction="ifRoom"/>
 </menu>

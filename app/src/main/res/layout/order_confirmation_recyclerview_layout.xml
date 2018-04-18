@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/order_id_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Order ID" />
+
+    <TextView
+        android:id="@+id/itemName_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20dp"
+
+        android:text="Item Name" />
+
+    <TextView
+        android:id="@+id/amount_paid_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:text="amount paid" />
+
+    <TextView
+        android:id="@+id/placedOn_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20dp"
+
+        android:text="Placed On" />
+
+</LinearLayout>

@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +28,6 @@ public class MyAdapter extends RecyclerView.Adapter {
     private static final int TYPE_HEAD = 0;
     private static final int TYPE_LIST = 1;
     private Handler handler;
-    private String cID;
     private int page=0;
     public static int span;
     ArrayList<Catogories> myList;
@@ -53,10 +54,11 @@ public class MyAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof MyViewHolder) {
-            final Catogories catogories = myList.get(position-1);
+            final Catogories catogories = myList.get(position);
             ((MyViewHolder) holder).mainText.setText(catogories.getCname());
-            Picasso.get().load(catogories.getCimagerl()).into(((MyViewHolder) holder).imageView);
-            cID=catogories.getCid();
+            Picasso.get().load(catogories.getCimagerl()).placeholder(R.drawable.no_preview).into(((MyViewHolder) holder).imageView);
+            ((MyViewHolder) holder).cID=catogories.getCid();
+            ((MyViewHolder) holder).name=catogories.getCname();
             if(position%3==0){
                 StaggeredGridLayoutManager.LayoutParams layoutParams = new StaggeredGridLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 layoutParams.setFullSpan(true);
@@ -65,7 +67,8 @@ public class MyAdapter extends RecyclerView.Adapter {
             ((MyViewHolder) holder).constraintLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Eventclass sendCid=new Eventclass(((MyViewHolder) holder).cID);
+                    EventBus.getDefault().post(sendCid);
                 }
             });
         } else if (holder instanceof BannerViewHolder) {
@@ -80,7 +83,7 @@ public class MyAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return myList.size()+1;
+        return myList.size();
     }
 
     @Override
@@ -93,6 +96,8 @@ public class MyAdapter extends RecyclerView.Adapter {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         int viewType;
+        String cID, name;
+
         TextView mainText;
         ConstraintLayout constraintLayout;
         ImageView imageView;

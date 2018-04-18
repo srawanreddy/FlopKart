@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -44,11 +45,21 @@ private SharedPreferences msharedPreferences;
 private String url;
 private LayoutAnimationController animation;
 private int page=0;
+private TextView toolbarText;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        toolbarText=getActivity().findViewById(R.id.toobar_textView);
+        toolbarText.setText("Home");
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
      View view= inflater.inflate(R.layout.home_fragment, null);
      View view_viewPager=inflater.inflate(R.layout.viewpager_for_photoslide, null);
+        catogoriesList.clear();
         animation = AnimationUtils.loadLayoutAnimation(getActivity(), R.anim.recyclerview_animation);
         msharedPreferences= getActivity().getSharedPreferences("user_local", MODE_PRIVATE);
         Log.i("Shared Preferrences", msharedPreferences.getString("api_key", ""));
@@ -90,8 +101,7 @@ private int page=0;
                         gaggeredGridLayoutManager=new StaggeredGridLayoutManager(2,1);
                         recyclerView.setLayoutManager(gaggeredGridLayoutManager);
                         recyclerView.setAdapter(myAdapter);
-//                        viewPagerAdapter=new ViewPagerAdapter(getActivity(), catogoriesList);
-//                        photoSlider.setAdapter(viewPagerAdapter);
+
                     }
 
                 } catch (JSONException e) {

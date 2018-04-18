@@ -29,17 +29,19 @@ private EditText uname, password;
 private TextView forgotPassword;
 private Button signIn, signUp;
 private ProgressDialog pDialog;
-private String jsonResponse;
 private CheckBox rememberMe;
 private String rjtUrl;
 private Boolean userFound=false;
-
 
 SharedPreferences msharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
+    }
+
+    private void init() {
         pDialog=new ProgressDialog(this);
         pDialog.setMessage("Loading...");
         pDialog.setCancelable(false);
@@ -50,7 +52,7 @@ SharedPreferences msharedPreferences;
         signUp=findViewById(R.id.signUp_button);
         rememberMe=findViewById(R.id.rememberMe);
         forgotPassword=findViewById(R.id.forgotPassword);
-        uname.setText(msharedPreferences.getString("UserName", ""));
+        uname.setText(msharedPreferences.getString("Mobile", ""));
         password.setText(msharedPreferences.getString("Password", ""));
         rememberMe.setChecked(msharedPreferences.getBoolean("isChecked", false));
         signIn.setOnClickListener(this);
@@ -63,7 +65,6 @@ SharedPreferences msharedPreferences;
         switch (view.getId()){
             case R.id.signin_button:
                 makeJasonArrReq();
-
                 break;
             case R.id.signUp_button:
                 startActivity(new Intent(MainActivity.this, SignUp.class));
@@ -75,14 +76,16 @@ SharedPreferences msharedPreferences;
 
     }
 
+
     private  void makeJasonArrReq(){
         showDialog();
         rjtUrl="http://rjtmobile.com/aamir/e-commerce/android-app/shop_login.php?mobile="+uname.getText().toString()+"&password="+password.getText().toString();
-        JsonArrayRequest jsonObjectRequest=new JsonArrayRequest(rjtUrl, new Response.Listener<JSONArray>() {
+        final JsonArrayRequest jsonObjectRequest=new JsonArrayRequest(rjtUrl, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
                 try {
+
                     for (int i = 0; i < response.length(); i++) {
                         JSONObject person = (JSONObject) response.get(i);
                         String msg = person.getString("msg");
@@ -92,6 +95,7 @@ SharedPreferences msharedPreferences;
                         String email = person.getString("email");
                         String mobile = person.getString("mobile");
                         String apiKey = person.getString("appapikey ");
+                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                         if(msg.contains("success")) {
                             if (rememberMe.isChecked()) {
                                 msharedPreferences.edit().putString("Password", password.getText().toString()).commit();
@@ -100,9 +104,9 @@ SharedPreferences msharedPreferences;
                                 msharedPreferences.edit().remove("Password").commit();
                                 msharedPreferences.edit().remove("isChecked").commit();
                             }
-                            hideDialog();
+
                             msharedPreferences.edit().putString("ID", id).commit();
-                            msharedPreferences.edit().putString("FullName", firstname+" "+lastname).commit();
+                            msharedPreferences.edit().putString("FullName", firstname+lastname).commit();
                             msharedPreferences.edit().putString("Email", email).commit();
                             msharedPreferences.edit().putString("Mobile", mobile).commit();
                             msharedPreferences.edit().putString("api_key", apiKey).commit();
@@ -110,8 +114,7 @@ SharedPreferences msharedPreferences;
                             startActivity(homeIntent);
 
                         }
-                            else
-                                Toast.makeText(getApplicationContext(), "Invalid Mobile or Password", Toast.LENGTH_SHORT).show();
+                        hideDialog();
                     }
                     Log.i("Response",response.toString());
 
@@ -124,6 +127,7 @@ SharedPreferences msharedPreferences;
             @Override
             public void onErrorResponse(VolleyError error) {
                 hideDialog();
+                Toast.makeText(MainActivity.this, "Invalid Mobile or Password", Toast.LENGTH_SHORT).show();
                 Log.i("Response",error.toString());
             }
         });
@@ -133,9 +137,7 @@ SharedPreferences msharedPreferences;
         //checkStatus(userFound);
     }
 
-    private void checkStatus(Boolean userFound) {
 
-    }
 
     private  void showDialog(){
         if(!pDialog.isShowing())
@@ -150,6 +152,9 @@ SharedPreferences msharedPreferences;
     @Override
     protected void onRestart() {
         super.onRestart();
-        msharedPreferences.edit().remove("Password");
+        if(!rememberMe.isChecked())
+        msharedPreferences.edit().remove("Password").commit();
+        password.setText(msharedPreferences.getString("Password", ""));
+        Toast.makeText(this, "Restarted", Toast.LENGTH_SHORT).show();
     }
 }
