@@ -35,5 +35,5 @@ dependencies {
     implementation 'com.braintreepayments.api:braintree:2.+'
     implementation 'com.braintreepayments.api:drop-in:3.+'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
-
+    compile 'q.rorbin:badgeview:1.1.3'
 }

@@ -11,10 +11,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -25,6 +27,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import q.rorbin.badgeview.Badge;
+import q.rorbin.badgeview.QBadgeView;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 private android.support.v7.widget.Toolbar homeToolbar;
@@ -36,14 +40,21 @@ private android.support.v7.widget.Toolbar homeToolbar;
     private EventFromSubCatToProduct eventFromSubCatToProduct;
     private CircleImageView profilePic;
     private final int GALLERY_CODE=2;
+    private Badge qBadgeView;
+    private  ImageButton cartButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_drawer);
-        EventBus.getDefault().register(this);
         msharedPreferences=getSharedPreferences("user_local", MODE_PRIVATE);
         homeToolbar=findViewById(R.id.home_toolbar);
+        EventBus.getDefault().register(this);
         setSupportActionBar(homeToolbar);
+
+//        cartButton=homeToolbar.findViewById(R.id.cart_button);
+//        qBadgeView = new QBadgeView(getBaseContext()).bindTarget(cartButton).
+//                setBadgeGravity(Gravity.END | Gravity.TOP).
+//                setBadgeNumber(0);
         drawerLayout=findViewById(R.id.drawer_layout);
         navigationView=findViewById(R.id.navigation_view);
         View headerView=navigationView.getHeaderView(0);
@@ -64,7 +75,13 @@ private android.support.v7.widget.Toolbar homeToolbar;
             }
         });
         username.setText(msharedPreferences.getString("FullName", ""));
-
+//        cartButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                CartFragment cartFragment=new CartFragment();
+//                getFragmentManager().beginTransaction().replace(R.id.fragment, cartFragment).addToBackStack("").commit();
+//            }
+//        });
         getFragmentManager().beginTransaction().replace(R.id.fragment, new HomeFragment()).commit();
 
     }
@@ -90,7 +107,9 @@ private android.support.v7.widget.Toolbar homeToolbar;
     @Override
     protected void onRestart() {
         super.onRestart();
+        EventBus.getDefault().register(this);
     }
+
 
     @Override
     protected void onPause() {
@@ -171,6 +190,10 @@ private android.support.v7.widget.Toolbar homeToolbar;
                     break;
             case R.id.navigation_logout:
                 finish();
+                break;
+            case R.id.technologies_used:
+                TechnologiesUsedFragment technologiesUsedFragment=new TechnologiesUsedFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment, technologiesUsedFragment).addToBackStack("").commit();
                 break;
         }
         return true;
