@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TrackingOrder">
+    tools:context=".activity.TrackingOrder">
 
     <ImageView
         android:id="@+id/tracking_image"
