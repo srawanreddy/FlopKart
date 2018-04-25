@@ -10,7 +10,7 @@
     <string name="navigation_logout_text">LogOut</string>
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
-    <string name="signin_toolbar_text">Sign in with mobile</string>
+    <string name="signin_toolbar_text">Sign in</string>
     <string name="fname_error_register">Invalid First Name</string>
     <string name="lname_error_register">Invalid Last Name</string>
     <string name="email_error_register">Invalid Email ID</string>

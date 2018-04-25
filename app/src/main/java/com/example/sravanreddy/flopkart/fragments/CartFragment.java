@@ -94,7 +94,6 @@ HashMap<String, String> paramHash;
                         cursor.getString(cursor.getColumnIndex(MyDBHelper.IMAGE))
                 );
                 totalPrice=totalPrice+(Integer.parseInt(productDetails.getPrice()) * Integer.parseInt(productDetails.getQuantity()));
-                Toast.makeText(getActivity(), productDetails.getQuantity(), Toast.LENGTH_SHORT).show();
             } while (cursor.moveToNext());
 
         taxValue=(totalPrice*10)/100;
@@ -132,7 +131,6 @@ HashMap<String, String> paramHash;
             totalPrice=totalPrice+(Integer.parseInt(productDetails.getPrice()) * Integer.parseInt(productDetails.getQuantity()));
             productDetailsList.add(productDetails);
         } while (cursor.moveToNext());
-        Toast.makeText(getActivity(), totalPrice+"", Toast.LENGTH_SHORT).show();
         taxValue=(totalPrice*10)/100;
         tax.setText(taxValue+"");
         price.setText("$"+(totalPrice+taxValue));
@@ -214,6 +212,7 @@ HashMap<String, String> paramHash;
                          discount=obj.getString("discount");
                     }
                     apply_coupon_button.setClickable(false);
+                    Toast.makeText(getActivity(), "Discount Applied", Toast.LENGTH_LONG).show();
                     totalPrice=totalPrice-((totalPrice*Integer.parseInt(discount))/100);
                     taxValue=(totalPrice*10)/100;
                     tax.setText(taxValue+"");

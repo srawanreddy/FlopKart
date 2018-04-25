@@ -94,7 +94,6 @@ SharedPreferences msharedPreferences;
                         String email = person.getString("email");
                         String mobile = person.getString("mobile");
                         String apiKey = person.getString("appapikey ");
-                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                         if(msg.contains("success")) {
                             if (rememberMe.isChecked()) {
                                 msharedPreferences.edit().putString("Password", password.getText().toString()).commit();

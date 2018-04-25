@@ -32,6 +32,7 @@ private Button resetPassword;
             @Override
             public void onResponse(String response) {
                 Toast.makeText(ForgotPassword.this, " New Password Sent to  your Email Id", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }, new Response.ErrorListener() {
             @Override

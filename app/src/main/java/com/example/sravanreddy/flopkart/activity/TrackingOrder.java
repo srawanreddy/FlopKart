@@ -59,7 +59,7 @@ SharedPreferences mSharedPreferences;
                     JSONArray jsonArray=temp.getJSONArray("Shipment track");
                     for(int i=0;i<jsonArray.length();i++){
                         JSONObject jsonObject=jsonArray.getJSONObject(i);
-                        shipmentID.setText(jsonObject.getString("shipmentid"));
+                        shipmentID.setText("Shipment ID: "+jsonObject.getString("shipmentid"));
                         shipmentStatus=jsonObject.getString("shipmentstatus");
                     }
 
